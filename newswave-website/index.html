@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NewsWave — clear, current and independent news.">
+  <title>NewsWave — The day, clearly.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topline"><div class="wrap topline-inner"><span id="today">TUESDAY, NOVEMBER 17, 2026</span><span class="top-note">Independent journalism. Every day.</span><a href="#latest">Explore latest <span>↗</span></a></div></div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#" aria-label="NewsWave home"><span class="brand-mark">N</span><span>NEWS<span class="brand-light">WAVE</span><small>THE DAY, CLEARLY.</small></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="active" href="#latest" data-nav="All">Latest</a><a href="#latest" data-nav="World">World</a><a href="#latest" data-nav="Technology">Technology</a><a href="#latest" data-nav="Business">Business</a><a href="#latest" data-nav="Science">Science</a><a href="#latest" data-nav="Culture">Culture</a>
+      </nav>
+      <div class="header-actions"><button class="search-toggle" id="searchToggle" aria-label="Open search">⌕</button><button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button></div>
+    </div>
+    <div class="mobile-nav" id="mobileNav"><a href="#latest" data-nav="All">Latest</a><a href="#latest" data-nav="World">World</a><a href="#latest" data-nav="Technology">Technology</a><a href="#latest" data-nav="Business">Business</a><a href="#latest" data-nav="Science">Science</a><a href="#latest" data-nav="Culture">Culture</a></div>
+    <div class="search-bar wrap" id="searchBar"><input id="searchInput" type="search" placeholder="Search stories, topics or keywords…" aria-label="Search news"><button id="clearSearch">Clear</button></div>
+  </header>
+
+  <main>
+    <section class="wrap breaking"><span class="breaking-label"><i></i> BREAKING</span><p>Today's biggest stories, explained with context — not noise.</p><a href="#latest">See all stories <b>→</b></a></section>
+
+    <section class="wrap lead-grid" id="topStories">
+      <article class="lead-story" id="leadStory">
+        <div class="lead-image image-skeleton"></div>
+        <div class="lead-content"><span class="eyebrow">EDITOR'S PICK</span><h1>Loading the top story…</h1><p>Discover the latest updates and analysis from our newsroom.</p></div>
+      </article>
+      <div class="side-stories" id="sideStories"></div>
+    </section>
+
+    <section class="wrap latest-section" id="latest">
+      <div class="section-heading"><div><span class="eyebrow">STAY INFORMED</span><h2>Latest stories<span class="dot">.</span></h2></div><div class="filters" id="filters"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="World">World</button><button class="filter" data-filter="Technology">Tech</button><button class="filter" data-filter="Business">Business</button><button class="filter" data-filter="Science">Science</button><button class="filter" data-filter="Culture">Culture</button></div></div>
+      <div class="news-grid" id="newsGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No stories found. Try another search or category.</p>
+    </section>
+
+    <section class="video-section">
+      <div class="wrap video-inner">
+        <div><span class="eyebrow light">WATCH & UNDERSTAND</span><h2>Stories in motion<span class="dot">.</span></h2><p>Watch the latest visual reports, explainers and interviews from the NewsWave desk.</p><button class="outline-button" id="watchFeatured">Watch featured report <span>▶</span></button></div>
+        <div class="video-preview" id="videoPreview"><img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1200&q=85" alt="Newspaper and press coverage"><button class="play-button" id="playVideo" aria-label="Play featured video">▶</button><span class="video-tag">NEWSWAVE VIDEO</span></div>
+      </div>
+    </section>
+
+    <section class="wrap newsletter">
+      <div><span class="eyebrow">THE DAILY BRIEFING</span><h2>Good news starts<br>with being informed.</h2><p>A sample newsletter signup section. Connect a mailing service to collect subscribers.</p></div>
+      <form id="newsletterForm"><label for="email">Get the top stories in your inbox</label><div class="email-row"><input id="email" type="email" placeholder="Your email address" required><button type="submit">Subscribe <span>→</span></button></div><small id="newsletterMessage">By subscribing, you agree to receive NewsWave updates.</small></form>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-main"><a class="brand footer-brand" href="#"><span class="brand-mark">N</span><span>NEWS<span class="brand-light">WAVE</span><small>THE DAY, CLEARLY.</small></span></a><p>Independent perspective. Informed decisions.<br>Built to help you understand what matters.</p><div class="footer-links"><a href="#latest">Latest news</a><a href="#latest">About</a><a href="mailto:hello@example.com">Contact</a></div></div><div class="wrap footer-bottom"><span>© <span id="year">2026</span> NewsWave. Demo website.</span><span>Sample stories for layout demonstration · Replace before publishing</span></div></footer>
+
+  <div class="modal" id="articleModal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="modal-panel"><button class="modal-close" data-close aria-label="Close">×</button><div id="modalContent"></div></article></div>
+  <div class="modal video-modal" id="videoModal" aria-hidden="true"><div class="modal-backdrop" data-close></div><div class="video-modal-panel"><button class="modal-close" data-close aria-label="Close">×</button><div class="video-frame" id="videoFrame"></div><p id="videoCaption"></p></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
